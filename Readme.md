@@ -33,7 +33,7 @@ ssh dokku@example.com config:set auth JWT_SECRET=zippity-doo-da GOOGLE_CLIENT_SE
   party providers. It does not tie into your backend models at all
   and is not meant to store any user data.
 
-  This server responds with a [JSON Web Token](jwt.io), which you can pass
+  This server responds with a [JSON Web Token](http://jwt.io), which you can pass
   to your API to create, update or verify the User. In order for the
   token to be accepted, the JWT secret must be the same on both servers.
 
