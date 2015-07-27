@@ -8,7 +8,7 @@
   variables below. You can also extend the server by requiring it directly.
 
   You'll probably want to use the client-side libraries that accompany the
-  server side component for a seamless experience. You can find the client-side
+  server-side component for a seamless experience. You can find the client-side
   libraries for each provider below.
 
 ## Usage
@@ -20,7 +20,7 @@ git clone https://github.com/lapwinglabs/bare-auth.git
 git remote add dokku dokku@example.com:auth
 git push dokku master
 
-ssh dokku@example.com config:set auth JWT_SECRET=zippity-day GOOGLE_CLIENT_SECRET=...
+ssh dokku@example.com config:set auth JWT_SECRET=zippity-doo-da GOOGLE_CLIENT_SECRET=...
 ```
 
 > Make sure you specify your own `JWT_SECRET`.

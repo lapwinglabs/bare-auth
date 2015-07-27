@@ -8,6 +8,7 @@ var express = require('express');
 var sign = require('./lib/sign');
 var env = require('./lib/env');
 var logger = require('morgan');
+var throng = require('throng');
 var cors = require('cors');
 
 /**
@@ -82,13 +83,21 @@ app.post('/auth/local', function(req, res, next) {
 });
 
 /**
+ * Listen function
+ */
+
+function listen() {
+  app.listen(env.PORT, function() {
+    var addr = this.address();
+    console.log('listening on [%s]:%s', addr.address, addr.port);
+  });
+}
+
+/**
  * Bind to a port if we're not already
  * requiring it.
  */
 
 if (!module.parent) {
-  app.listen(env.PORT, function() {
-    var addr = this.address();
-    console.log('listening on [%s]:%s', addr.address, addr.port);
-  });
+  throng(listen);
 }
