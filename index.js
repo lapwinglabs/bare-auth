@@ -86,8 +86,8 @@ app.post('/auth/local', function(req, res, next) {
  * Add a ping
  */
 
-app.get('/ping', function(req, res, next) {
-  res.send('PONG');
+app.get('/', function(req, res, next) {
+  res.send('bare auth running!');
 });
 
 /**
