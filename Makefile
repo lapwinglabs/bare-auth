@@ -1,7 +1,7 @@
+development:
+	@./node_modules/.bin/node-dev index.js
 
-test:
-	@./node_modules/.bin/mocha \
-		--require should \
-		--reporter spec
+production:
+	@NODE_ENV=production node index.js
 
-.PHONY: test
+.PHONY: development
