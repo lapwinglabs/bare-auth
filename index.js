@@ -74,23 +74,6 @@ if (env.FACEBOOK_CLIENT_SECRET) {
 }
 
 /**
- * Local route (for signing purposes)
- */
-
-app.post('/auth/local', function(req, res, next) {
-  var body = req.body;
-  res.send(sign(body));
-});
-
-/**
- * Add a ping
- */
-
-app.get('/', function(req, res, next) {
-  res.send('bare auth running!');
-});
-
-/**
  * Listen function
  */
 
