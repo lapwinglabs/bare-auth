@@ -13,7 +13,7 @@
 
 ## Usage
 
-Pushing to your a Dokku server:
+Pushing to a [Dokku](https://github.com/progrium/dokku) server:
 
 ```bash
 git clone https://github.com/lapwinglabs/bare-auth.git
