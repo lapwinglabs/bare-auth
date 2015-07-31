@@ -1,4 +1,9 @@
 
+1.0.2 / 2015-07-30
+==================
+
+  * Make JWT support optional. Default is returning a JSON response.
+
 1.0.1 / 2015-07-26
 ==================
 
