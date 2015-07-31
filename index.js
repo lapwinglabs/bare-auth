@@ -20,7 +20,6 @@ var Twitter = require('bare-auth-twitter');
 var LinkedIn = require('bare-auth-linkedin');
 var Facebook = require('bare-auth-facebook');
 
-
 /**
  * Setup express server
  */

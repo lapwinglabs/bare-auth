@@ -3,7 +3,7 @@
 
   Bare Auth is a ready-to-deploy stateless authentication server.
 
-  This server supports all authentication strategies out of the box.
+  This server supports various authentication strategies out of the box.
   You can enable the routes by supplying the specified environment
   variables below. You can also extend the server by requiring it directly.
 
@@ -23,8 +23,6 @@ git push dokku master
 ssh dokku@example.com config:set auth JWT_SECRET=zippity-doo-da GOOGLE_CLIENT_SECRET=...
 ```
 
-> Make sure you specify your own `JWT_SECRET`.
-
 > Accepting PRs for Heroku instructions or a Heroku deploy button :-)
 
 ## Design
@@ -32,10 +30,6 @@ ssh dokku@example.com config:set auth JWT_SECRET=zippity-doo-da GOOGLE_CLIENT_SE
   The purpose of this server is to simply retrieve user data from 3rd
   party providers. It does not tie into your backend models at all
   and is not meant to store any user data.
-
-  This server responds with a [JSON Web Token](http://jwt.io), which you can pass
-  to your API to create, update or verify the User. In order for the
-  token to be accepted, the JWT secret must be the same on both servers.
 
 ## Providers
 
@@ -47,6 +41,18 @@ Provider | Author | Description | Environment Variables
 [LinkedIn](https://github.com/lapwinglabs/bare-auth-linkedin) | [Lapwing Labs](https://github.com/lapwinglabs) | Log in with LinkedIn | `LINKEDIN_CLIENT_SECRET`
 
 > If you create your own authentication strategy, submit a pull request!
+
+## JWT support
+
+Bare Auth comes with built-in support for [JSON Web Tokens](http://jwt.io).
+To sign the response, simply add the `JWT_SECRET` environment variable.
+
+Tou can pass this token to your API to create, update or verify the User.
+In order for the token to be accepted, the JWT secret must be the same
+on both servers.
+
+You can also adjust the expiration by setting the `JWT_EXPIRATION`. In order for the
+token to be accepted, the JWT secret must be the same on both servers.
 
 ## License
 
