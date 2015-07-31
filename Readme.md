@@ -47,7 +47,7 @@ Provider | Author | Description | Environment Variables
 Bare Auth comes with built-in support for [JSON Web Tokens](http://jwt.io).
 To sign the response, simply add the `JWT_SECRET` environment variable.
 
-Tou can pass this token to your API to create, update or verify the User.
+You can pass this token to your API to create, update or verify the User.
 In order for the token to be accepted, the JWT secret must be the same
 on both servers.
 
