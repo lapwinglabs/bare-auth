@@ -34,7 +34,6 @@
     "jsonwebtoken": "^5.0.4",
     "morgan": "^1.6.1",
     "ms": "^0.7.1",
-    "object-assign": "^3.0.0",
     "throng": "^1.0.0"
   },
   "devDependencies": {
