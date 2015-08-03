@@ -1,8 +1,20 @@
 /**
- * Module Dependencies
+ * Load in any environment variables in .env
+ */
+
+require('localenv');
+
+/**
+ * DEBUG
  */
 
 var debug = require('debug')('bare-auth');
+
+/**
+ * Module Dependencies
+ */
+
+var browserify = require('browserify-middleware');
 var bodyParser = require('body-parser');
 var express = require('express');
 var sign = require('./lib/sign');
@@ -73,6 +85,30 @@ if (env.FACEBOOK_CLIENT_SECRET) {
 }
 
 /**
+ * Enable the front-end
+ */
+
+if (env.FRONTEND) {
+  app.set('views', __dirname + '/client');
+  browserify.settings({ transform: ['envify'] })
+  app.get('/client.js', browserify(__dirname + '/client/client.js'));
+  app.get('/client.css', function(req, res, next) {
+    res.sendFile(__dirname + '/client/client.css')
+  })
+
+  env.FRONTEND = 'string' == typeof env.FRONTEND ? env.FRONTEND : '/';
+
+  app.get(env.FRONTEND, function(req, res, next) {
+    res.render('client.jade', {
+      twitter: env.TWITTER_CONSUMER_SECRET && env.TWITTER_CONSUMER_KEY,
+      facebook: env.FACEBOOK_CLIENT_SECRET && env.FACEBOOK_CLIENT_ID,
+      linkedin: env.LINKEDIN_CLIENT_SECRET && env.LINKEDIN_CLIENT_ID,
+      google: env.GOOGLE_CLIENT_SECRET && env.GOOGLE_CLIENT_ID
+    });
+  });
+}
+
+/**
  * Listen function
  */
 
@@ -89,5 +125,6 @@ function listen() {
  */
 
 if (!module.parent) {
-  throng(listen);
+  listen();
+  // throng(listen);
 }

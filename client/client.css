@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height :100%;
+  margin: 0;
+}
+
+.body {
+  width: 728px;
+  margin: 50px auto;
+}
+
+img {
+  margin-bottom: 50px;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  margin: 0;
+  background: #ececec;
+}
+
+.buttons {
+  margin-top: 50px;
+}
+
+button {
+  border-radius: 3px;
+  font-size: 20px;
+  display: block;
+  border: none;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+  background: #ececec !important;
+  color: #ccc !important;
+}
+
+button ~ button {
+  margin-top: 20px;
+}
+
+button[service='facebook'] {
+  color: white;
+  background: #415D9D;
+}
+
+button[service='google'] {
+  color: white;
+  background: #D93B2B;
+}
+
+button[service='twitter'] {
+  color: white;
+  background: #50ABF1;
+}
+
+button[service='linkedin'] {
+  color: white;
+  background: #0983BD;
+}
+
+.output:not(:empty) {
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0 20px;
+  padding: 20px;
+  padding-top: 30px;
+  font-size: 16px;
+}
+
+.output .key {
+  color: #00b9f1;
+}
+.output .string {
+  color: #fb015b;
+}
+
+.output .boolean,
+.output .number {
+  color: #d63aff;
+}

@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Bare Auth
+    link(href='/client.css', rel='stylesheet')
+  body
+    .body
+      img(src="https://cldup.com/8aMWTku75W.png")
+      hr
+      .buttons
+        button(service = 'facebook', disabled = !facebook) Sign in with Facebook
+        .output(service='facebook')
+        button(service='google', disabled = !google) Sign in with Google
+        .output(service='google')
+        button(service='twitter', disabled = !twitter) Sign in with Twitter
+        .output(service='twitter')
+        button(service='linkedin', disabled = !linkedin) Sign in with LinkedIn
+        .output(service='linkedin')
+
+      script(src='/client.js')

@@ -56,6 +56,14 @@ not been tampered with or forged by an evil-doer.
 
 Additionally, you can adjust the expiration by setting the `JWT_EXPIRATION`.
 
+## Frontend
+
+Bare Auth comes with a built-in frontend to help with testing. You can enable
+the frontend by setting the `FRONTEND=path` environment variable. By default,
+`path` is `/`. Here's what the frontend looks like:
+
+![bare auth](https://cldup.com/CJMHakGtVn.png)
+
 ## License
 
 MIT
